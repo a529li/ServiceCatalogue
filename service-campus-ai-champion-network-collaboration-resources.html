@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Campus AI Champion Network Collaboration Resources – AI Service Catalogue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-main: #ffffff;
+      --bg-page: #f5f5f7;
+      --text-main: #111111;
+      --text-muted: #555555;
+      --card-bg: #ffffff;
+      --card-border: #dedede;
+      --gold: #f1c40f;
+      --max-width: 960px;
+      --shadow-soft: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      background: #000000;
+      color: #ffffff;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .top-home-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .top-home-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .top-home-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .top-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .top-link {
+      font-size: 0.95rem;
+      color: #ffffffcc;
+      text-decoration: none;
+    }
+
+    .top-link.active {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .top-link:hover {
+      color: #ffffff;
+    }
+
+    .top-search-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-search-icon {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .top-search-icon img {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    .top-search-input {
+      display: none;
+      font-size: 0.85rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+    }
+
+    .top-search-input.visible {
+      display: inline-block;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .gold-bar {
+      height: 8px;
+      background: linear-gradient(to right,
+        #f4d03f, #f1c40f, #f39c12);
+    }
+
+    .hero {
+      background: #000000;
+      padding: 1.6rem 1.5rem 1.9rem;
+      color: #ffffff;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4rem;
+      color: #ffffff;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    main {
+      flex: 1;
+      background: var(--bg-page);
+      padding: 2rem 1.5rem 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    /* --- Service card content --- */
+    .service-card-page {
+      padding-top: 0.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .service-section {
+      margin-bottom: 3rem;
+    }
+
+    .service-section .service-subheading:last-of-type + .service-text {
+      margin-bottom: 1.2rem; /* give nested sections breathing room */
+    }
+    .service-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-text {
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: #444444;
+    }
+
+    .service-text p {
+      margin: 0.4rem 0 1rem 0;
+    }
+
+    .service-meta {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: #777777;
+    }
+
+    .service-subheading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .service-subheading + .service-text {
+      padding-left: 1.5rem;
+    }
+
+    .service-text p {
+      margin-bottom: 0.6rem;
+    }
+
+    footer {
+      background: #000000;
+      color: #ffffff;
+      padding: 2.3rem 1.5rem;
+      border-top: 4px solid var(--gold);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+
+    .footer-inner > div {
+      min-width: 220px;
+    }
+
+    .footer-column-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #ffffff;
+    }
+
+    .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-faq li {
+      list-style: none;
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .faq-answer {
+      display: block;
+      color: #cccccc;
+      font-size: 0.85rem;
+      margin-top: 0.2rem;
+    }
+
+    .footer-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-list a {
+      color: #f1f1f1;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="top-left">
+      <a href="categories.html" class="top-home-link">
+        <span class="top-home-icon">
+          <img src="images/home.jpg" alt="Home">
+        </span>
+        <span class="top-title">AI Service Catalogue</span>
+      </a>
+    </div>
+    <nav class="top-right">
+      <a href="categories.html" class="top-link">By Category</a>
+      <a href="az.html" class="top-link">By A–Z</a>
+      <a href="audience.html" class="top-link">By Audience</a>
+      <div class="top-search-wrapper">
+        <button class="top-search-icon" type="button" aria-label="Open search">
+          <img src="images/search.jpg" alt="Search">
+        </button>
+        <input class="top-search-input" type="text" placeholder="Search" />
+      </div>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Campus AI Champion Network Collaboration Resources</h1>
+      <p class="hero-subtitle"></p>
+    </div>
+  </header>
+
+  <div class="gold-bar"></div>
+
+  <main>
+    <div class="content">
+      <article class="service-card-page">
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-column-title">Frequently Asked Questions</div>
+        <ul class="footer-faq">
+          <li>
+            <strong>What is the service catalogue?</strong><br>
+            <span class="faq-answer">
+              The AI Service Catalogue is a central directory that lists all AI-related tools, platforms, 
+              and support services offered by the university. It helps you understand what each service does, 
+              how to access it, and who to contact for help.
+            </span>
+          </li>
+
+          <li>
+            <strong>How do I request a new service?</strong><br>
+            <span class="faq-answer">
+              You can request a new service by clicking “Feedback / Propose a Service” and filling out the 
+              form. There will be a space to describe the service you need, why you need it, and any relevant 
+              details. For urgent or time-sensitive requests, please reach out using the contact listed in the 
+              Additional Resources section.
+            </span>
+          </li>
+
+          <li>
+            <strong>Who maintains the service catalogue?</strong><br>
+            <span class="faq-answer">
+              The service catalogue is maintained by Information Systems & Technology (IST). They oversee 
+              updates, ensure the information stays accurate, and coordinate with service owners across 
+              campus to keep listings current.
+            </span>
+          </li>
+
+          <li>
+            <strong>How do I cancel or modify a service request?</strong><br>
+            <span class="faq-answer">
+              Submitted requests cannot be modified within the catalogue interface. If you need to cancel or 
+              update a request, please use the contact listed in the Additional Resources section.
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-column-title">Additional Resources</div>
+        <ul class="footer-list">
+          <li><a href="https://uwaterloo.ca/information-systems-technology/help">Help Desk</a></li>
+          <li><a href="https://uwaterloo.atlassian.net/servicedesk/customer/portal/2">Report an issue</a></li>
+          <li><a href="#">Feedback / Propose a Service</a></li>
+          <li><a href="#">Responsible AI</a></li>
+          <li>Contact: <a href="mailto:aisupport@example.edu">aisupport@example.edu</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll('.category-card');
+      cards.forEach(card => {
+        const btn = card.querySelector('.toggle-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function (event) {
+          event.stopPropagation();
+          const isOpen = card.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      });
+
+      const searchIcon = document.querySelector('.top-search-icon');
+      const searchInput = document.querySelector('.top-search-input');
+      if (searchIcon && searchInput) {
+        searchIcon.addEventListener('click', () => {
+          searchInput.classList.toggle('visible');
+          if (searchInput.classList.contains('visible')) {
+            searchInput.focus();
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
