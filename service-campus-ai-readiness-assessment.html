@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AI Service Catalogue - Categories</title>
+  <title>Campus AI Readiness Assessment - AI Service Catalogue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -271,6 +271,169 @@
       text-decoration: underline;
     }
 
+    /* --- A-Z specific --- */
+
+    .az-nav {
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.8rem;
+    }
+
+    .az-link {
+      color: #111111;
+      text-decoration: none;
+      margin: 0 0.35rem;
+    }
+
+    .az-link:hover {
+      text-decoration: underline;
+    }
+
+    .letter-section {
+      margin-bottom: 2rem;
+    }
+
+    .letter-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .az-service-list {
+      list-style: square;
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
+    }
+
+    .az-service-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .az-service-list a {
+      color: #004272;
+      text-decoration: none;
+    }
+
+    .az-service-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Service card content --- */
+
+    .service-card-page {
+      padding-top: 0.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .service-section {
+      margin-bottom: 3rem;
+    }
+
+    .service-section .service-subheading:last-of-type + .service-text {
+      margin-bottom: 1.2rem; /* give nested sections breathing room */
+    }
+
+    .service-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-text {
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: #444444;
+    }
+
+    .service-text p {
+      margin: 0.4rem 0 1rem 0;
+    }
+
+    .service-meta {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: #777777;
+    }
+
+    .service-subheading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .service-subheading + .service-text {
+      padding-left: 1.5rem;
+    }
+
+    .service-text p {
+      margin-bottom: 0.6rem;
+    }
+
+    /* --- Search results page --- */
+
+    .search-results-page {
+      padding-top: 0.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .search-summary {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-bottom: 1.0rem;
+    }
+
+    .search-summary span {
+      font-weight: 600;
+      color: #111111;
+    }
+
+    .search-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .search-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .search-card-title a {
+      color: #004272;
+      text-decoration: none;
+    }
+
+    .search-card-title a:hover {
+      text-decoration: underline;
+    }
+
+    .search-card-meta {
+      font-size: 0.8rem;
+      color: #777777;
+      margin-bottom: 0.4rem;
+    }
+
+    .search-card-snippet {
+      font-size: 0.9rem;
+      color: #444444;
+      line-height: 1.4;
+    }
+
+    .search-no-results {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-top: 0.5rem;
+    }
+
+    /* --- Footer --- */
+
     footer {
       background: #000000;
       color: #ffffff;
@@ -313,6 +476,43 @@
       text-decoration: underline;
       text-decoration-thickness: 1px;
     }
+
+    /* --- FAQ specific (only used on FAQ page) --- */
+
+    .faq-page {
+      padding-top: 0.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .faq-intro {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 1.5rem;
+      padding-top: 1.0rem;
+      border-top: 1px solid #dedede;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .faq-answer-block {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: #444444;
+    }
   </style>
 </head>
 <body>
@@ -327,7 +527,7 @@
       </a>
     </div>
     <nav class="top-right">
-      <a href="categories.html" class="top-link active">By Category</a>
+      <a href="categories.html" class="top-link">By Category</a>
       <a href="az.html" class="top-link">By A-Z</a>
       <a href="audience.html" class="top-link">By Audience</a>
       <div class="top-search-wrapper">
@@ -341,8 +541,8 @@
 
   <header class="hero">
     <div class="hero-inner">
-      <h1 class="hero-title">AI Service Catalogue</h1>
-      <p class="hero-subtitle">Sorted by Category</p>
+      <h1 class="hero-title">Campus AI Readiness Assessment</h1>
+      <p class="hero-subtitle">Author: XY | Last Updated: 2025-11-25<br>Tags: Readiness, Maturity Model, Assessment, Campus Planning</p>
     </div>
   </header>
 
@@ -350,103 +550,46 @@
 
   <main>
     <div class="content">
-      <section class="category-card">
-        <div class="card-image"><img src="images/platforms.jpg" alt="Icon"></div>
-        <div class="card-body">
-          <div class="card-header">
-            <h2 class="category-title">Platforms</h2>
-            <button class="toggle-btn" type="button" aria-expanded="false" aria-label="Toggle services for Platforms">▾</button>
+      <article class="service-card-page">
+        <section class="service-section">
+          <h2 class="service-heading">Overview</h2>
+          <div class="service-text">
+            <p>Evaluates the readiness of units and faculties to adopt AI tools, providing insights into skills, infrastructure, policy alignment, and opportunities for growth.</p>
           </div>
-          <p class="category-desc">Infrastructure for AI workloads. Core technology foundation that allows building, running, and managing AI tools safely and at scale.</p>
-          <hr class="category-divider" />
-          <ul class="service-list">
-            <li><a href="service-aa-example-service.html">AA Example Service</a></li>
-            <li><a href="service-ai-software-advocacy-and-technical-support.html">AI Software Advocacy and Technical Support</a></li>
-            <li><a href="service-inference-api.html">Inference API</a></li>
-            <li><a href="service-model-fine-tuning-service.html">Model Fine-tuning Service</a></li>
-            <li><a href="service-azure-ai-cloud-consulting.html">Azure AI & Cloud Consulting</a></li>
-            <li><a href="service-platforms.html">Platforms</a></li>
-            <li><a href="service-research-ai.html">Research AI</a></li>
-            <li><a href="service-image-generators.html">Image Generators</a></li>
-            <li><a href="service-copilot.html">Copilot</a></li>
-            <li><a href="service-copilot-pro.html">Copilot Pro</a></li>
-            <li><a href="service-gemini.html">Gemini</a></li>
-            <li><a href="service-image-generator.html">Image Generator</a></li>
-            <li><a href="service-chatgpt.html">ChatGPT</a></li>
-            <li><a href="service-grammarly.html">Grammarly</a></li>
-          </ul>
-        </div>
-      </section>
-      <section class="category-card">
-        <div class="card-image"><img src="images/applications.jpg" alt="Icon"></div>
-        <div class="card-body">
-          <div class="card-header">
-            <h2 class="category-title">Applications</h2>
-            <button class="toggle-btn" type="button" aria-expanded="false" aria-label="Toggle services for Applications">▾</button>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Service Owner</h2>
+          <div class="service-text">
+            IST: <a href="mailto:helpdesk@uwaterloo.ca">helpdesk@uwaterloo.ca</a>
           </div>
-          <p class="category-desc">AI tools used in daily operations and learning environments. Help automate tasks, improve efficiency, and enhance teaching and support.</p>
-          <hr class="category-divider" />
-          <ul class="service-list">
-            <li><a href="service-custom-ai-solution-development.html">Custom AI Solution Development</a></li>
-            <li><a href="service-developer-ai-tools-and-apis.html">Developer AI Tools and APIs</a></li>
-            <li><a href="service-campus-chat-and-agent-platform.html">Campus Chat and Agent Platform</a></li>
-            <li><a href="service-applications.html">Applications</a></li>
-            <li><a href="service-chatbots-and-ai-assistants.html">Chatbots and AI Assistants</a></li>
-            <li><a href="service-ai-writing-tools.html">AI Writing Tools</a></li>
-          </ul>
-        </div>
-      </section>
-      <section class="category-card">
-        <div class="card-image"><img src="images/education.jpg" alt="Icon"></div>
-        <div class="card-body">
-          <div class="card-header">
-            <h2 class="category-title">Education and Engagement</h2>
-            <button class="toggle-btn" type="button" aria-expanded="false" aria-label="Toggle services for Education and Engagement">▾</button>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Eligibility and Use</h2>
+          <div class="service-text">
+            <p>Available to departments, faculties, and administrative units.</p>
           </div>
-          <p class="category-desc">Supports AI literacy, awareness, and experimentation for staff, faculty, and students. Encourages hands-on learning and sharing of best practices.</p>
-          <hr class="category-divider" />
-          <ul class="service-list">
-            <li><a href="service-ai-champions-network.html">AI Champions Network</a></li>
-            <li><a href="service-ai-champion-collaboration-hub.html">AI Champion Collaboration Hub</a></li>
-            <li><a href="service-staff-and-faculty-ai-training.html">Staff and Faculty AI Training</a></li>
-            <li><a href="service-student-ai-training-and-engagement.html">Student AI Training and Engagement</a></li>
-            <li><a href="service-ai-events-on-campus.html">AI Events on Campus</a></li>
-            <li><a href="service-education-and-engagement.html">Education and Engagement</a></li>
-          </ul>
-        </div>
-      </section>
-      <section class="category-card">
-        <div class="card-image"><img src="images/principles.jpg" alt="Icon"></div>
-        <div class="card-body">
-          <div class="card-header">
-            <h2 class="category-title">Principles and Guardrails</h2>
-            <button class="toggle-btn" type="button" aria-expanded="false" aria-label="Toggle services for Principles and Guardrails">▾</button>
+          <h3 class="service-subheading">Usage</h3>
+          <div class="service-text">
+            <p>Complete the AI Readiness Assessment survey or request a facilitated assessment.</p>
           </div>
-          <p class="category-desc">Ensures AI is used ethically, transparently, and safely across the university. Establishes the guardrails that protect people's privacy and guide fair use.</p>
-          <hr class="category-divider" />
-          <ul class="service-list">
-            <li><a href="service-governance-and-responsible-ai-consulting.html">Governance and Responsible AI Consulting</a></li>
-            <li><a href="service-responsible-ai-protocols.html">Responsible AI Protocols</a></li>
-            <li><a href="service-principles-and-guardrails.html">Principles and Guardrails</a></li>
-          </ul>
-        </div>
-      </section>
-      <section class="category-card">
-        <div class="card-image"><img src="images/kpis.jpg" alt="Icon"></div>
-        <div class="card-body">
-          <div class="card-header">
-            <h2 class="category-title">KPIs</h2>
-            <button class="toggle-btn" type="button" aria-expanded="false" aria-label="Toggle services for KPIs">▾</button>
+          <h3 class="service-subheading">Restrictions</h3>
+          <div class="service-text">
+            <p>Assessment results may be shared only with approved unit leadership.</p>
           </div>
-          <p class="category-desc">Tracks how AI is being adopted, used, and improved over time. Provides insight into impact, effectiveness, and future opportunities.</p>
-          <hr class="category-divider" />
-          <ul class="service-list">
-            <li><a href="service-ai-systems-data-service.html">AI Systems Data Service</a></li>
-            <li><a href="service-campus-ai-readiness-assessment.html">Campus AI Readiness Assessment</a></li>
-            <li><a href="service-kpis.html">KPIs</a></li>
-          </ul>
-        </div>
-      </section>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Cost</h2>
+          <div class="service-text">
+            <p>Free</p>
+          </div>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Documentation</h2>
+          <div class="service-text">
+            <ul> <li><a href="#">Assessment framework</a></li> <li><a href="#">Improvement roadmap template</a></li> <li><a href="#">Methodology guide</a></li> </ul>
+          </div>
+        </section>
+      </article>
     </div>
   </main>
 

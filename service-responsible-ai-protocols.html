@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Responsible AI Protocols – AI Service Catalogue</title>
+  <title>Responsible AI Protocols - AI Service Catalogue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -174,7 +174,154 @@
       max-width: var(--max-width);
     }
 
+    .category-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 1.2rem 1.5rem 1.4rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-image {
+      flex: 0 0 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #cccccc;
+    }
+
+    .card-body {
+      flex: 1;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .category-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #111111;
+    }
+
+    .toggle-btn {
+      border: none;
+      background: transparent;
+      color: #444444;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease;
+    }
+
+    .category-card.open .toggle-btn {
+      transform: rotate(180deg);
+    }
+
+    .category-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-divider {
+      border: none;
+      border-bottom: 1px solid #e0e0e0;
+      margin: 0.3rem 0 0.5rem;
+    }
+
+    .service-list {
+      list-style: disc;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
+
+    .category-card.open .service-list {
+      display: block;
+    }
+
+    .service-list li {
+      margin-bottom: 0.15rem;
+    }
+
+    .service-list a {
+      color: #004272;
+      text-decoration: none;
+    }
+
+    .service-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- A-Z specific --- */
+
+    .az-nav {
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.8rem;
+    }
+
+    .az-link {
+      color: #111111;
+      text-decoration: none;
+      margin: 0 0.35rem;
+    }
+
+    .az-link:hover {
+      text-decoration: underline;
+    }
+
+    .letter-section {
+      margin-bottom: 2rem;
+    }
+
+    .letter-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .az-service-list {
+      list-style: square;
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
+    }
+
+    .az-service-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .az-service-list a {
+      color: #004272;
+      text-decoration: none;
+    }
+
+    .az-service-list a:hover {
+      text-decoration: underline;
+    }
+
     /* --- Service card content --- */
+
     .service-card-page {
       padding-top: 0.5rem;
       padding-bottom: 3rem;
@@ -187,6 +334,7 @@
     .service-section .service-subheading:last-of-type + .service-text {
       margin-bottom: 1.2rem; /* give nested sections breathing room */
     }
+
     .service-heading {
       font-size: 1.25rem;
       font-weight: 700;
@@ -224,6 +372,68 @@
       margin-bottom: 0.6rem;
     }
 
+    /* --- Search results page --- */
+
+    .search-results-page {
+      padding-top: 0.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .search-summary {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-bottom: 1.0rem;
+    }
+
+    .search-summary span {
+      font-weight: 600;
+      color: #111111;
+    }
+
+    .search-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .search-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .search-card-title a {
+      color: #004272;
+      text-decoration: none;
+    }
+
+    .search-card-title a:hover {
+      text-decoration: underline;
+    }
+
+    .search-card-meta {
+      font-size: 0.8rem;
+      color: #777777;
+      margin-bottom: 0.4rem;
+    }
+
+    .search-card-snippet {
+      font-size: 0.9rem;
+      color: #444444;
+      line-height: 1.4;
+    }
+
+    .search-no-results {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-top: 0.5rem;
+    }
+
+    /* --- Footer --- */
+
     footer {
       background: #000000;
       color: #ffffff;
@@ -257,19 +467,6 @@
       margin: 0;
     }
 
-    .footer-faq li {
-      list-style: none;
-      margin-bottom: 0.8rem;
-      line-height: 1.4;
-    }
-
-    .faq-answer {
-      display: block;
-      color: #cccccc;
-      font-size: 0.85rem;
-      margin-top: 0.2rem;
-    }
-
     .footer-list li {
       margin-bottom: 0.3rem;
     }
@@ -278,6 +475,43 @@
       color: #f1f1f1;
       text-decoration: underline;
       text-decoration-thickness: 1px;
+    }
+
+    /* --- FAQ specific (only used on FAQ page) --- */
+
+    .faq-page {
+      padding-top: 0.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .faq-intro {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 1.5rem;
+      padding-top: 1.0rem;
+      border-top: 1px solid #dedede;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .faq-answer-block {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: #444444;
     }
   </style>
 </head>
@@ -294,7 +528,7 @@
     </div>
     <nav class="top-right">
       <a href="categories.html" class="top-link">By Category</a>
-      <a href="az.html" class="top-link">By A–Z</a>
+      <a href="az.html" class="top-link">By A-Z</a>
       <a href="audience.html" class="top-link">By Audience</a>
       <div class="top-search-wrapper">
         <button class="top-search-icon" type="button" aria-label="Open search">
@@ -308,7 +542,7 @@
   <header class="hero">
     <div class="hero-inner">
       <h1 class="hero-title">Responsible AI Protocols</h1>
-      <p class="hero-subtitle"></p>
+      <p class="hero-subtitle">Author: XY | Last Updated: 2025-11-25<br>Tags: Responsible AI, Policy, Safety, Governance, Compliance</p>
     </div>
   </header>
 
@@ -317,59 +551,64 @@
   <main>
     <div class="content">
       <article class="service-card-page">
+        <section class="service-section">
+          <h2 class="service-heading">Overview</h2>
+          <div class="service-text">
+            <p>Provides centralized guidance on responsible AI use, including approved practices, evaluation criteria, safety requirements, and processes for high-risk or sensitive applications.</p>
+          </div>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Service Owner</h2>
+          <div class="service-text">
+            IST: <a href="mailto:helpdesk@uwaterloo.ca">helpdesk@uwaterloo.ca</a>
+          </div>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Eligibility and Use</h2>
+          <div class="service-text">
+            <p>All students, staff, and faculty may access and reference these protocols.</p>
+          </div>
+          <h3 class="service-subheading">Usage</h3>
+          <div class="service-text">
+            <p>Review the protocols before beginning any new AI project or system integration.</p>
+          </div>
+          <h3 class="service-subheading">Restrictions</h3>
+          <div class="service-text">
+            <p>Certain protocols may require departmental approval for implementation.</p>
+          </div>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Cost</h2>
+          <div class="service-text">
+            <p>Free</p>
+          </div>
+        </section>
+        <section class="service-section">
+          <h2 class="service-heading">Documentation</h2>
+          <div class="service-text">
+            <ul> <li><a href="#">Policy document</a></li> <li><a href="#">Process diagrams</a></li> <li><a href="#">Compliance guides</a></li> </ul>
+          </div>
+        </section>
       </article>
     </div>
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-column-title">Frequently Asked Questions</div>
-        <ul class="footer-faq">
-          <li>
-            <strong>What is the service catalogue?</strong><br>
-            <span class="faq-answer">
-              The AI Service Catalogue is a central directory that lists all AI-related tools, platforms, 
-              and support services offered by the university. It helps you understand what each service does, 
-              how to access it, and who to contact for help.
-            </span>
-          </li>
-
-          <li>
-            <strong>How do I request a new service?</strong><br>
-            <span class="faq-answer">
-              You can request a new service by clicking “Feedback / Propose a Service” and filling out the 
-              form. There will be a space to describe the service you need, why you need it, and any relevant 
-              details. For urgent or time-sensitive requests, please reach out using the contact listed in the 
-              Additional Resources section.
-            </span>
-          </li>
-
-          <li>
-            <strong>Who maintains the service catalogue?</strong><br>
-            <span class="faq-answer">
-              The service catalogue is maintained by Information Systems & Technology (IST). They oversee 
-              updates, ensure the information stays accurate, and coordinate with service owners across 
-              campus to keep listings current.
-            </span>
-          </li>
-
-          <li>
-            <strong>How do I cancel or modify a service request?</strong><br>
-            <span class="faq-answer">
-              Submitted requests cannot be modified within the catalogue interface. If you need to cancel or 
-              update a request, please use the contact listed in the Additional Resources section.
-            </span>
-          </li>
-        </ul>
-      </div>
-      <div>
+    <div class="footer-inner footer-two-col">
+      <div class="footer-col">
         <div class="footer-column-title">Additional Resources</div>
         <ul class="footer-list">
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="https://uwaterloo.ca/information-systems-technology/help">Help Desk</a></li>
           <li><a href="https://uwaterloo.atlassian.net/servicedesk/customer/portal/2">Report an issue</a></li>
-          <li><a href="#">Feedback / Propose a Service</a></li>
-          <li><a href="#">Responsible AI</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-column-title">&nbsp;</div>
+        <ul class="footer-list">
+          <li><a href="https://forms.gle/TmxgbJqEsgo1zEoW7">Feedback / Propose a Service</a></li>
+          <li><a href="responsible-ai.html">Responsible AI</a></li>
           <li>Contact: <a href="mailto:aisupport@example.edu">aisupport@example.edu</a></li>
         </ul>
       </div>
@@ -396,6 +635,15 @@
           searchInput.classList.toggle('visible');
           if (searchInput.classList.contains('visible')) {
             searchInput.focus();
+          }
+        });
+
+        searchInput.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            const q = searchInput.value.trim();
+            if (!q) return;
+            const encoded = encodeURIComponent(q);
+            window.location.href = 'search.html?q=' + encoded;
           }
         });
       }
